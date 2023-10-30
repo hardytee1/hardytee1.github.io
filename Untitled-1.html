@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Calculator with Vue.js</title>
+</head>
+<body>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <div id="app">
+        <input v-model="firstNumber"  placeholder="Enter first number">
+        <input v-model="secondNumber" placeholder="Enter second number">
+        <br>
+        <button v-on:click="hasil=parseFloat(firstNumber)+parseFloat(secondNumber)">+</button>
+        <button v-on:click="hasil=parseFloat(firstNumber)-parseFloat(secondNumber)">-</button>
+        <button v-on:click="hasil=parseFloat(firstNumber)*parseFloat(secondNumber)">x</button>
+        <button v-on:click="hasil=parseFloat(firstNumber)/parseFloat(secondNumber)">/</button><br>
+        {{ hasil }}
+    </div>
+    <script>
+
+
+        const {createApp} = Vue
+
+
+        createApp({
+            data(){
+                return {
+                    firstNumber : "",
+                    secondNumber : "",
+                    hasil : "",
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+</html>
